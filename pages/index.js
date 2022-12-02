@@ -165,8 +165,8 @@ export default function Home() {
                 <br />
                 {tryLoggedIn &&
                   " - you may be asked a code (2 times max) from google on your phone repeat the process until it won't "}
-                - Suggestion for mac chrome path :<br /> "/Applications/Google
-                Chrome.app/Contents/MacOS/Google Chrome"
+                - Suggestion for mac chrome path :<br /> /Applications/Google
+                Chrome.app/Contents/MacOS/Google Chrome
               </div>
               <br />
               <Form onSubmit={handleSubmit}>
