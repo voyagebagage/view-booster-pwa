@@ -7,8 +7,9 @@ class MyDocument extends Document {
         <Head>
           <link rel="manifest" href="/manifest.json" />
           <link rel="apple-touch-icon" href="/icon.png"></link>
-          <meta name="theme-color" content="#fff" />
+          <meta name="theme-color" content="#282c34" />
         </Head>
+        <title>View Booster PWA</title>
         <body>
           <Main />
           <NextScript />
