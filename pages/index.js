@@ -37,17 +37,17 @@ export default function Home() {
   } = formState;
 
   const handleChange = (e) => {
-    // if (e.target.checked) {
-    updateFormState(() => ({
-      ...formState,
-      [e.target.name]: e.target.checked || e.target.value,
-    }));
-    // } else {
-    //   updateFormState(() => ({
-    //     ...formState,
-    //     [e.target.name]: e.target.value,
-    //   }));
-    // }
+    if (e.target.checked) {
+      updateFormState(() => ({
+        ...formState,
+        [e.target.name]: e.target.checked,
+      }));
+    } else {
+      updateFormState(() => ({
+        ...formState,
+        [e.target.name]: e.target.value,
+      }));
+    }
   };
   const handleClick = (name, nextValue) => {
     updateFormState(() => ({ ...formState, [name]: nextValue }));
