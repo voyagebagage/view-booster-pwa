@@ -6,10 +6,10 @@ But let's find out !
 As this boost will run forever(as long as you wish), you will need a server running on your computer 
 and the app/browser app or postman for the developpers 
 
-This is the web app README :
+This is the web app README :  [Server README]()
 
 1) Make/Choose a YT playlist 
-2) Clone the repository and install the web app or go directly to the website/deploy 
+2) Clone the repository and install the web app or go directly to the [website/deploy](https://this-is-view-booster-yt.netlify.app/) 
 3) Install it or use it in the browser
 4) Find your Chrome path on your computer
-5) Install the server, find the repository here
+5) Install the server, find the repository [here]()
