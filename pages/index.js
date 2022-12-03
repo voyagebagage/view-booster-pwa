@@ -94,6 +94,7 @@ export default function Home() {
               label={tryLoggedIn ? "logged-in" : "un-logged"}
               value={tryLoggedIn && tryLoggedIn}
               name={"tryLoggedIn"}
+              disabled
             />
             <p className="text-muted">
               Since I don&apos;t know yet if the unsigned in views are counting,
@@ -234,8 +235,8 @@ export default function Home() {
                       name={"chromePath"}
                       value={chromePath && chromePath}
                     />
-                    Verify, write &apos;chrome://version/&apos; in a new tab of
-                    chrome then copy the value of: &apos;Executable Path&apos;
+                    {/* Verify, write &apos;chrome://version/&apos; in a new tab of
+                    chrome then copy the value of: &apos;Executable Path&apos; */}
                   </Form.Group>
                 </Col>
                 <Form.Group xs="auto">
