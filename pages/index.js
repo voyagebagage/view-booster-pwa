@@ -23,7 +23,7 @@ export default function Home() {
     tryLoggedIn: false,
     username: "",
     password: "",
-    formStage: "init",
+    formStage: "muteOrNot",
   };
   const [formState, updateFormState] = useState(initialFormState);
   const {
@@ -127,13 +127,13 @@ export default function Home() {
               label={mute ? "mute" : "un-mute"}
             />
             <Form.Group className="flex">
-              <Button
+              {/* <Button
                 className="mb-2"
                 onClick={(e) => handleClick(e.target.name, "init")}
                 name={"formStage"}
               >
                 Prev
-              </Button>{" "}
+              </Button>{" "} */}
               <Button
                 className="mb-2"
                 onClick={(e) => handleClick(e.target.name, "final")}
