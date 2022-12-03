@@ -6,7 +6,7 @@ But let's find out !
 As this boost will run forever(as long as you wish), you will need a server running on your computer 
 and the app/browser app or postman for the developpers 
 
-This is the web app README :  [Server README]()
+This is the web app README :  [Server README](https://github.com/voyagebagage/view-booster-server)
 ---
 
 1. Make/Choose a YT playlist 
