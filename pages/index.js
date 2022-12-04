@@ -66,12 +66,10 @@ export default function Home() {
           // password: password,
         }
       );
-      console.log(response);
     } catch (error) {
       console.log(error);
     }
   };
-  console.log(formState);
   return (
     <div className="App">
       <header className="App-header">
