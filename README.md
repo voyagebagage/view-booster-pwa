@@ -6,7 +6,7 @@ But let's find out !
 As this boost will run forever(as long as you wish), you will need a server running on your computer 
 and the app/browser app or postman for the developpers 
 
-This is the web app README :  [Server README]()
+This is the web app README :  [Server README](https://github.com/voyagebagage/view-booster-server)
 ---
 
 1. Make/Choose a YT playlist 
@@ -24,7 +24,7 @@ const {automationYoutubeUrl , mute, chromePath} = req.query
 ```
 3 Install the app... 
 ---
-simply click on the first buttonon the right hand side
+simply click on the first download button on the right hand side
 
 <img width="828" alt="Capture d’écran 2022-12-03 à 09 22 31" src="https://user-images.githubusercontent.com/81431557/205454861-96ffef6e-9f62-43c4-8587-43a4494bd84d.png">
 
