@@ -38,14 +38,12 @@ export default function Home() {
 
   const handleChange = (e) => {
     if ("checked" in e.target) {
-      console.log(typeof e.target.checked, e.target.checked, "checked");
       updateFormState(() => ({
         ...formState,
         [e.target.name]: e.target.checked,
       }));
     }
     if ("value" in e.target) {
-      console.log(typeof e.target.value, "value");
       updateFormState(() => ({
         ...formState,
         [e.target.name]: e.target.value,
