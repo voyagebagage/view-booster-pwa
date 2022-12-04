@@ -117,7 +117,7 @@ export default function Home() {
               id="custom-switch2"
               className="mb-4"
               checked={mute}
-              onChange={handleChange}
+              onChange={(e) => handleChange(e)}
               name={"mute"}
               value={mute && mute}
               label={mute ? "mute" : "un-mute"}
@@ -142,8 +142,8 @@ export default function Home() {
         )}
         {formStage === "final" && (
           <>
-            <h2 className="text-muted">before hand:</h2>
             <Container fluid="sm">
+              <h2 className="text-muted">before hand:</h2>
               <div className="text-muted">
                 - make sure you are using a playlist link <br />- to support us
                 click{" "}
@@ -165,8 +165,10 @@ export default function Home() {
                 - Suggestion for mac chrome path :<br /> /Applications/Google
                 Chrome.app/Contents/MacOS/Google Chrome
               </div>
-              <br />
-              <Form onSubmit={handleSubmit}>
+            </Container>
+            <br />
+            <Form onSubmit={handleSubmit}>
+              <Container fluid="sm">
                 <Col xl="auto">
                   <InputGroup className="mb-4">
                     <InputGroup.Text>Youtube</InputGroup.Text>
@@ -254,8 +256,8 @@ export default function Home() {
                   </Button>
                   {/* </Col> */}
                 </Form.Group>
-              </Form>{" "}
-            </Container>
+              </Container>
+            </Form>{" "}
           </>
         )}
       </header>
