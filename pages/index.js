@@ -37,12 +37,15 @@ export default function Home() {
   } = formState;
 
   const handleChange = (e) => {
-    if (e.target.checked) {
+    if ("checked" in e.target) {
+      console.log(typeof e.target.checked, e.target.checked, "checked");
       updateFormState(() => ({
         ...formState,
         [e.target.name]: e.target.checked,
       }));
-    } else {
+    }
+    if ("value" in e.target) {
+      console.log(typeof e.target.value, "value");
       updateFormState(() => ({
         ...formState,
         [e.target.name]: e.target.value,
@@ -116,8 +119,8 @@ export default function Home() {
               className="mb-4"
               checked={mute}
               onChange={(e) => handleChange(e)}
-              name={"mute"}
               value={mute && mute}
+              name={"mute"}
               label={mute ? "mute" : "un-mute"}
             />
             <Form.Group className="flex">
