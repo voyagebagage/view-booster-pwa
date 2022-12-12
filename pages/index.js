@@ -1,17 +1,13 @@
 // import "bootstrap/dist/css/bootstrap.css";
 import { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import {
   InputGroup,
   Col,
   Form,
   FormControl,
   Button,
-  FloatingLabel,
-  Card,
   Container,
-  NavLink,
-  Row,
 } from "react-bootstrap";
 import Link from "next/link";
 
@@ -21,34 +17,29 @@ export default function Home() {
     mute: false,
     chromePath: "",
     tryLoggedIn: false,
-    username: "",
-    password: "",
+    // username: "",
+    // password: "",
     formStage: "muteOrNot",
   };
+
   const [formState, updateFormState] = useState(initialFormState);
+
   const {
-    tryLoggedIn,
     mute,
     automationUrl,
-    username,
-    password,
+    tryLoggedIn,
+    // username,
+    // password,
     chromePath,
     formStage,
   } = formState;
 
   const handleChange = (e) => {
-    if ("checked" in e.target) {
-      updateFormState(() => ({
-        ...formState,
-        [e.target.name]: e.target.checked,
-      }));
-    }
-    if ("value" in e.target) {
-      updateFormState(() => ({
-        ...formState,
-        [e.target.name]: e.target.value,
-      }));
-    }
+    updateFormState(() => ({
+      ...formState,
+      [e.target.name]:
+        e.target.type === "checkbox" ? e.target.checked : e.target.value,
+    }));
   };
   const handleClick = (name, nextValue) => {
     updateFormState(() => ({ ...formState, [name]: nextValue }));
@@ -56,21 +47,29 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        `http://localhost:6807/next-video?automationYoutubeUrl=${automationUrl}&mute=${mute}&chromePath=${chromePath}&username=${username}&password=${password}&tryLoggedIn=${tryLoggedIn}`,
+      const queries = {
+        automationYoutubeUrl: automationUrl,
+        mute: mute,
+        chromePath: chromePath,
+      };
+
+      const response = await fetch(
+        `api/next-video?automationYoutubeUrl=${automationUrl}&mute=${mute}&chromePath=${chromePath}`,
         {
-          automationYoutubeUrl: automationUrl,
-          mute: mute,
-          chromePath: chromePath,
+          method: "POST",
+          body: JSON.stringify(queries),
           // tryLoggedIn: tryLoggedIn,
           // username: username,
           // password: password,
         }
       );
+      const data = await response.json();
+      return data;
     } catch (error) {
       console.log(error);
     }
   };
+  console.log("formState :", formState);
   return (
     <div className="App">
       <header className="App-header">
@@ -161,8 +160,15 @@ export default function Home() {
                 <br />
                 {tryLoggedIn &&
                   " - you may be asked a code (2 times max) from google on your phone repeat the process until it won't "}
-                - Suggestion for mac chrome path :<br /> /Applications/Google
-                Chrome.app/Contents/MacOS/Google Chrome
+                - Suggestion for chrome path :{" "}
+                <Button
+                // as={Link}
+                // onClick={()=> ()}
+                // /Applications/Google
+                // Chrome.app/Contents/MacOS/Google Chrome
+                >
+                  MacOS
+                </Button>
               </div>
             </Container>
             <br />
