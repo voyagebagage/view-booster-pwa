@@ -9,7 +9,7 @@ require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/chrome.ap
 // Now you can import the StealthPlugin :D
 
 // // add stealth plugin and use defaults (all evasion techniques)
-const StealthPlugin = require("puppeteer-extra-plugin-stealth");
+const StealthPlugin = require("../../../node_modules/puppeteer-extra-plugin-stealth");
 puppeteer.use(StealthPlugin());
 
 const random = () => {
