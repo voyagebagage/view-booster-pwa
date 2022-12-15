@@ -39,6 +39,7 @@ export default function Home() {
     chromePath,
     formStage,
   } = formState;
+
   // ~~~~~~
   const handleChange = (e) => {
     updateFormState(() => ({
