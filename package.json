@@ -8,9 +8,6 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "pkg": {
-    "assets": "node_modules/puppeteer-extra-plugin-stealth/**/*.*"
-  },
   "dependencies": {
     "bootstrap": "^5.2.2",
     "chrome-aws-lambda": "^10.1.0",
@@ -20,8 +17,6 @@
     "next-connect": "^0.13.0",
     "next-pwa": "^5.6.0",
     "puppeteer-core": "^19.4.0",
-    "puppeteer-extra": "^3.3.4",
-    "puppeteer-extra-plugin-stealth": "^2.11.1",
     "react": "18.2.0",
     "react-bootstrap": "^2.6.0",
     "react-dom": "18.2.0"

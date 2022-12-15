@@ -1,16 +1,16 @@
 // const { puppeteer } = require("puppeteer-extra");
 const chromium = require("chrome-aws-lambda");
-const puppeteer = require("../../../puppeteer-extra");
+const puppeteer = require("puppeteer-core");
 
 // Add the Imports before StealthPlugin
-require("../../../puppeteer-extra-plugin-stealth/evasions/chrome.app");
-// require("puppeteer-extra/dist/index.cjs.js");
+// require("../../../puppeteer-extra-plugin-stealth/evasions/chrome.app");
+// require("../../../puppeteer-extra/dist/index.cjs.js");
 
 // Now you can import the StealthPlugin :D
 
 // // add stealth plugin and use defaults (all evasion techniques)
-const StealthPlugin = require("../../../puppeteer-extra-plugin-stealth");
-puppeteer.use(StealthPlugin());
+// const StealthPlugin = require("../../../puppeteer-extra-plugin-stealth");
+// puppeteer.use(StealthPlugin());
 
 const random = () => {
   return Math.ceil(Math.random() * 10000);
