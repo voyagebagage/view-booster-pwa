@@ -9,7 +9,7 @@ const handler = nc({
     res.status(500).end("Something broke!");
   },
   onNoMatch: (req, res) => {
-    res.status(404).end("Because, Page is not found");
+    res.status(404).end("Page is not found");
   },
 }).post(async (req, res) => {
   try {

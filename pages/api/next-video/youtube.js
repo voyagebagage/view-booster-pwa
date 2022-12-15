@@ -31,7 +31,6 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
     executablePath: chromePath || (await chromium.executablePath),
   });
   const page = await browser.newPage();
-  console.log("coucou1");
   await page.goto(automationYoutubeUrl, {
     // waitUntil: "load",
     // timeout: 0,
@@ -43,7 +42,6 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
   //   await page.waitForSelector(
   //     "button.yt-spec-touch-feedback-shape--touch-response.yt-spec-touch-feedback-shape__fill"
   //   );
-  console.log("coucou2");
   await page.waitForXPath('//button[@aria-label="Loop playlist"]');
   //   let playButton = await page.$x('//button[@title="Play (k)"]');
   let loopPlaylistEnable = await page.$x(
@@ -53,18 +51,15 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
   //click loop, mute and play
   await loopPlaylistEnable[0].click();
 
-  console.log("coucou3");
   await new Promise(function (resolve) {
     setTimeout(resolve, 200 + random(0.5));
   });
-  //   await page.waitFor(1000).then(() => console.log("Waited a second!"));
   //   await page.waitFor(200 + random(0.5));
   await new Promise(function (resolve) {
     setTimeout(resolve, 100 + random(0.5));
   });
 
   // await page.waitFor(100 + random(0.5));
-  console.log("coucou4");
 
   const totalPlaylistVideoNumber = await page.$$eval(
     "span.style-scope.yt-formatted-string",

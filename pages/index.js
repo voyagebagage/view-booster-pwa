@@ -8,10 +8,15 @@ import {
   FormControl,
   Button,
   Container,
+  Alert,
+  ToggleButtonGroup,
+  ToggleButton,
 } from "react-bootstrap";
 import Link from "next/link";
 
 export default function Home() {
+  // const notFindChrome = "Failed to launch the browser process!";
+
   const initialFormState = {
     automationUrl: "",
     mute: false,
@@ -19,6 +24,7 @@ export default function Home() {
     tryLoggedIn: false,
     // username: "",
     // password: "",
+    errors: null,
     formStage: "muteOrNot",
   };
 
@@ -28,12 +34,13 @@ export default function Home() {
     mute,
     automationUrl,
     tryLoggedIn,
+    errors,
     // username,
     // password,
     chromePath,
     formStage,
   } = formState;
-
+  // ~~~~~~
   const handleChange = (e) => {
     updateFormState(() => ({
       ...formState,
@@ -41,12 +48,14 @@ export default function Home() {
         e.target.type === "checkbox" ? e.target.checked : e.target.value,
     }));
   };
+  // ~~~~~~
   const handleClick = (name, nextValue) => {
     updateFormState(() => ({ ...formState, [name]: nextValue }));
   };
+  // ~~~~~~
   const handleSubmit = async (e) => {
-    e.preventDefault();
     try {
+      e.preventDefault();
       const queries = {
         automationYoutubeUrl: automationUrl,
         mute: mute,
@@ -64,12 +73,22 @@ export default function Home() {
         }
       );
       const data = await response.json();
+      console.log(data, data.error);
+      if (data.success === false) {
+        if (
+          data.error.includes("spawn") ||
+          data.error.includes("Failed to launch")
+        ) {
+          data.error =
+            "Find the right path for chrome, copy 'chrome://version/' in a new tab of your chrome browser and copy the 'Executable Path' in, for more look in the repository";
+        }
+        handleClick("errors", data.error);
+      }
       return data;
     } catch (error) {
-      console.log(error);
+      console.log("error:", error);
     }
   };
-  console.log("formState :", formState);
   return (
     <div className="App">
       <header className="App-header">
@@ -161,14 +180,35 @@ export default function Home() {
                 {tryLoggedIn &&
                   " - you may be asked a code (2 times max) from google on your phone repeat the process until it won't "}
                 - Suggestion for chrome path :{" "}
-                <Button
-                // as={Link}
-                // onClick={()=> ()}
-                // /Applications/Google
-                // Chrome.app/Contents/MacOS/Google Chrome
+                <ToggleButtonGroup
+                  type="radio"
+                  name="options"
+                  defaultValue={1}
+                  onChange={(e) => handleClick("chromePath", e)}
                 >
-                  MacOS
-                </Button>
+                  <ToggleButton
+                    id="tbg-radio-1"
+                    value={
+                      "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+                    }
+                  >
+                    Mac Os
+                  </ToggleButton>
+                  <ToggleButton
+                    id="tbg-radio-2"
+                    value={
+                      "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s"
+                    }
+                  >
+                    Win
+                  </ToggleButton>
+                  <ToggleButton
+                    id="tbg-radio-3"
+                    value={"/opt/google/chrome/google-chrome"}
+                  >
+                    Linux
+                  </ToggleButton>
+                </ToggleButtonGroup>
               </div>
             </Container>
             <br />
@@ -227,12 +267,14 @@ export default function Home() {
                 ) : null}
                 <Col md="auto">
                   <Form.Group className="mb-2">
-                    <Form.Label className="text-muted">Chrom Path</Form.Label>
+                    <Form.Label className="text-muted">
+                      Chrome Executable Path
+                    </Form.Label>
                     <Form.Control
                       id="inlineFormInput"
                       type="text"
                       className="bg-secondary bg-gradient text-white placeholder-white"
-                      placeholder="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+                      placeholder="Executable Path"
                       // aria-aria-describedby="seconds"
                       onChange={(e) => handleChange(e)}
                       name={"chromePath"}
@@ -261,6 +303,15 @@ export default function Home() {
                   </Button>
                   {/* </Col> */}
                 </Form.Group>
+                {errors && (
+                  <Alert
+                    variant="primary"
+                    onClose={() => handleClick("errors", null)}
+                    dismissible
+                  >
+                    {errors}
+                  </Alert>
+                )}
               </Container>
             </Form>{" "}
           </>
