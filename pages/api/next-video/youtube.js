@@ -1,10 +1,10 @@
 // const { puppeteer } = require("puppeteer-extra");
 const chromium = require("chrome-aws-lambda");
-const puppeteer = require("puppeteer-extra");
+const puppeteer = require("../../../node_modules/puppeteer-extra");
 
 // Add the Imports before StealthPlugin
 
-require("puppeteer-extra/dist/index.cjs.js");
+// require("puppeteer-extra/dist/index.cjs.js");
 
 // Now you can import the StealthPlugin :D
 
