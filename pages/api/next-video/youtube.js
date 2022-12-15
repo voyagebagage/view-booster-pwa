@@ -1,6 +1,6 @@
 // const { puppeteer } = require("puppeteer-extra");
 const chromium = require("chrome-aws-lambda");
-const puppeteer = require("puppeteer-core");
+const puppeteer = require("puppeteer-extra");
 
 // Add the Imports before StealthPlugin
 // puppeteer-extra/dist/index.cjs.js
@@ -25,8 +25,8 @@ const puppeteer = require("puppeteer-core");
 // require("../../../node_modules/puppeteer-extra/dist/index.cjs");
 
 // // add stealth plugin and use defaults (all evasion techniques)
-// const StealthPlugin = require("puppeteer-extra-plugin-stealth");
-// puppeteer.use(StealthPlugin());
+const StealthPlugin = require("puppeteer-extra-plugin-stealth");
+puppeteer.use(StealthPlugin());
 
 const random = () => {
   return Math.ceil(Math.random() * 10000);
