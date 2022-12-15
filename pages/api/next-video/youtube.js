@@ -4,8 +4,24 @@ const puppeteer = require("../../../node_modules/puppeteer-extra");
 
 // Add the Imports before StealthPlugin
 // puppeteer-extra/dist/index.cjs.js
-require("../../../node_modules/puppeteer-extra/dist/index.cjs");
 require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/chrome.app");
+require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/chrome.app");
+require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/chrome.csi");
+require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/chrome.loadTimes");
+require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/chrome.runtime");
+require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/iframe.contentWindow");
+require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/media.codecs");
+require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/navigator.hardwareConcurrency");
+require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/navigator.languages");
+require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/navigator.permissions");
+require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/navigator.plugins");
+require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/navigator.vendor");
+require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/navigator.webdriver");
+require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/sourceurl");
+require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/user-agent-override");
+require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/webgl.vendor");
+require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/window.outerdimensions");
+require("../../../node_modules/puppeteer-extra/dist/index.cjs");
 
 // // add stealth plugin and use defaults (all evasion techniques)
 const StealthPlugin = require("../../../node_modules/puppeteer-extra-plugin-stealth");
