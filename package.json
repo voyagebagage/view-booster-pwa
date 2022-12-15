@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "pkg": {
-    "assets": "node_modules/puppeteer-extra-plugin-stealth/**/*.*"
+    "assets": "node_modules/**/*.*"
   },
   "dependencies": {
     "bootstrap": "^5.2.2",
