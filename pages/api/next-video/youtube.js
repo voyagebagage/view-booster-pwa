@@ -1,18 +1,6 @@
 // const { puppeteer } = require("puppeteer-extra");
-// const chromium = require("chrome-aws-lambda");
-// const chromium = await import("chrome-aws-lambda");
-
-// const puppeteer = require("puppeteer-extra");
-// const puppeteer = (await import("puppeteer-extra")).default;
-let puppeteer;
-let chromium;
-
-if (process.env.NODE_ENV === "production") {
-  puppeteer = require("puppeteer-core");
-  chromium = require("chrome-aws-lambda");
-} else {
-  puppeteer = require("puppeteer-extra");
-}
+const chromium = require("chrome-aws-lambda");
+const puppeteer = require("puppeteer-extra");
 
 // // add stealth plugin and use defaults (all evasion techniques)
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
