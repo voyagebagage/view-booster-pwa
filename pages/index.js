@@ -27,7 +27,7 @@ export default function Home() {
   };
 
   const [formState, updateFormState] = useState(initialFormState);
-
+  const apiUrl = "https://view-booster.netlify.app/api/next-video";
   const {
     mute,
     automationUrl,
@@ -62,7 +62,7 @@ export default function Home() {
       };
 
       const response = await fetch(
-        `api/next-video?automationYoutubeUrl=${automationUrl}&mute=${mute}&chromePath=${chromePath}`,
+        `${apiUrl}?automationYoutubeUrl=${automationUrl}&mute=${mute}&chromePath=${chromePath}`,
         {
           method: "POST",
           body: JSON.stringify(queries),
