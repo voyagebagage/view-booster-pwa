@@ -63,15 +63,19 @@ export default function Home() {
         chromePath: chromePath,
       };
 
-      const response = await fetch(
-        `api/next-video?automationYoutubeUrl=${automationUrl}&mute=${mute}&chromePath=${chromePath}`,
-        {
-          method: "POST",
-          body: JSON.stringify(queries),
-          // tryLoggedIn: tryLoggedIn,
-          // username: username,
-          // password: password,
-        }
+      // const response = await fetch(
+      //   `api/next-video?automationYoutubeUrl=${automationUrl}&mute=${mute}&chromePath=${chromePath}`,
+      //   {
+      //     method: "POST",
+      //     body: JSON.stringify(queries),
+      //     // tryLoggedIn: tryLoggedIn,
+      //     // username: username,
+      //     // password: password,
+      //   }
+      // );
+      const response = await axios.post(
+        "/.netlify/functions/next-video",
+        queries
       );
       const data = await response.json();
       console.log(data, data.error);
