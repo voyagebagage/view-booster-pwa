@@ -27,7 +27,7 @@ export default function Home() {
   };
 
   const [formState, updateFormState] = useState(initialFormState);
-  const apiUrl = "https://view-booster.netlify.app/api/next-video";
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const {
     mute,
     automationUrl,
