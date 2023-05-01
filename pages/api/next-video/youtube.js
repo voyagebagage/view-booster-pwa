@@ -2,28 +2,6 @@
 const chromium = require("chrome-aws-lambda");
 const puppeteer = require("puppeteer-extra");
 
-// Add the Imports before StealthPlugin
-// puppeteer-extra/dist/index.cjs.js
-// require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/chrome.app");
-// require("puppeteer-extra-plugin-stealth/evasions/chrome.app");
-// require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/chrome.app");
-// require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/chrome.csi");
-// require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/chrome.loadTimes");
-// require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/chrome.runtime");
-// require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/iframe.contentWindow");
-// require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/media.codecs");
-// require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/navigator.hardwareConcurrency");
-// require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/navigator.languages");
-// require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/navigator.permissions");
-// require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/navigator.plugins");
-// require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/navigator.vendor");
-// require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/navigator.webdriver");
-// require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/sourceurl");
-// require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/user-agent-override");
-// require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/webgl.vendor");
-// require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/window.outerdimensions");
-// require("../../../node_modules/puppeteer-extra/dist/index.cjs");
-
 // // add stealth plugin and use defaults (all evasion techniques)
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 puppeteer.use(StealthPlugin());
@@ -40,23 +18,14 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
       "--no-sandbox",
       "--disable-setuid-sandbox",
       mute === true ? "--mute-audio" : "",
-      //   "--disable-background-timer-throttling",
-      //   "--disable-gpu",
-      //   "--disable-dev-shm-usage",
-      //   "--no-first-run",
-      //   "--no-zygote",
-      //   "--single-process",
     ],
-    // args: chromium.args,
+
     defaultViewport: null,
-    // ignoreHTTPSErrors: true,
+
     executablePath: chromePath || (await chromium.executablePath),
   });
   const page = await browser.newPage();
-  await page.goto(automationYoutubeUrl, {
-    // waitUntil: "load",
-    // timeout: 0,
-  });
+  await page.goto(automationYoutubeUrl, {});
   // //----------------------------------------------------------------------------------------------------
   // //                                            XXX-SET-UP-XXX
   // //-----------------------------------------------------------------------------------------------------
