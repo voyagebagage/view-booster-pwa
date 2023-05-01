@@ -9,6 +9,7 @@ const withPWA = require("next-pwa")({
 
 const nextConfig = withPWA({
   reactStrictMode: true,
+  target: "serverless",
 });
 
 module.exports = nextConfig;

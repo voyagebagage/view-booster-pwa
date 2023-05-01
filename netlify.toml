@@ -1,5 +1,10 @@
+[build]
+  command   = "npm run build"
+  functions = "out_functions"
+  publish   = "out_publish"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-  
+
 [build.environment]
   NEXT_DISABLE_EDGE_IMAGES = "true"
