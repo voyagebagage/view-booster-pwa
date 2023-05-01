@@ -28,7 +28,7 @@ export default function Home() {
 
   const [formState, updateFormState] = useState(initialFormState);
 
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  // const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const {
     mute,
@@ -64,7 +64,7 @@ export default function Home() {
       };
 
       const response = await fetch(
-        `${apiUrl}api/next-video?automationYoutubeUrl=${automationUrl}&mute=${mute}&chromePath=${chromePath}`,
+        `api/next-video?automationYoutubeUrl=${automationUrl}&mute=${mute}&chromePath=${chromePath}`,
         {
           method: "POST",
           body: JSON.stringify(queries),
