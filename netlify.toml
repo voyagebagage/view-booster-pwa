@@ -3,11 +3,12 @@
 
 [build.environment]
   NEXT_DISABLE_EDGE_IMAGES = "true"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
 [build]
   command = "yarn build"
   functions = "functions"
-  publish = "out"
+  publish = ".next"
 
 [[redirects]]
   from = "/*"
