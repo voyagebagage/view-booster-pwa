@@ -76,11 +76,9 @@ export default function Home() {
       //     // password: password,
       //   }
       // );
-      const response = await axios.post(
-        // "/.netlify/functions/next-video",
-        `${API_BASE_URL}/next-video`,
-        queries
-      );
+      const response = await axios.post(`${API_BASE_URL}/next-video`, queries, {
+        timeout: 60000,
+      });
       console.log("response:", response.status, response.data);
       // const data = await response.json();
       const data = await response.data;

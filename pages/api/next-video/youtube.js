@@ -26,7 +26,7 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
     executablePath: chromePath,
   });
   const page = await browser.newPage();
-  await page.goto(automationYoutubeUrl, {});
+  await page.goto(automationYoutubeUrl, { timeout: 60000 });
   // //----------------------------------------------------------------------------------------------------
   // //                                            XXX-SET-UP-XXX
   // //-----------------------------------------------------------------------------------------------------
