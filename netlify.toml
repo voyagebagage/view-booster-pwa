@@ -3,6 +3,7 @@
 
 [build.environment]
   NEXT_DISABLE_EDGE_IMAGES = "true"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
 [build]
   command = "yarn build"
