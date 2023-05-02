@@ -6,6 +6,5 @@
 
 [build]
   command = "yarn build"
-  functions = "functions"
   publish = ".next"
 
