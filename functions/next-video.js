@@ -6,7 +6,8 @@ exports.handler = async function (event, context) {
   }
 
   try {
-    const queries = event.body;
+    const queries = JSON.parse(event.body);
+    console.log(queries);
     const { automationYoutubeUrl, mute, chromePath } = queries;
     await youtube(automationYoutubeUrl, Boolean(mute), chromePath);
     return { statusCode: 200, body: JSON.stringify({ success: true }) };
