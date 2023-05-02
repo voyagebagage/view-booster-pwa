@@ -22,7 +22,8 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
 
     defaultViewport: null,
 
-    executablePath: chromePath || (await chromium.executablePath),
+    // executablePath: chromePath || (await chromium.executablePath),
+    executablePath: chromePath,
   });
   const page = await browser.newPage();
   await page.goto(automationYoutubeUrl, {});
