@@ -2629,14 +2629,14 @@ puppeteer-core@^19.4.0:
     unbzip2-stream "1.4.3"
     ws "8.10.0"
 
-puppeteer-extra-plugin-stealth@2.7.8:
-  version "2.7.8"
-  resolved "https://registry.yarnpkg.com/puppeteer-extra-plugin-stealth/-/puppeteer-extra-plugin-stealth-2.7.8.tgz#7424c955e25351a55024734477059c988647047c"
-  integrity sha512-Zhm/WY/BAk9VGdZR5OVpiwfGn2NoAzEb0hdu3/PGRryfenn8Dtoai8aUa8GzFPExWL+yGPsztswupH+3TV3M2A==
+puppeteer-extra-plugin-stealth@^2.11.2:
+  version "2.11.2"
+  resolved "https://registry.yarnpkg.com/puppeteer-extra-plugin-stealth/-/puppeteer-extra-plugin-stealth-2.11.2.tgz#bd3f5a1781cac8a98c983d148086585a84fcc8f1"
+  integrity sha512-bUemM5XmTj9i2ZerBzsk2AN5is0wHMNE6K0hXBzBXOzP5m5G3Wl0RHhiqKeHToe/uIH8AoZiGhc1tCkLZQPKTQ==
   dependencies:
     debug "^4.1.1"
-    puppeteer-extra-plugin "^3.1.9"
-    puppeteer-extra-plugin-user-preferences "^2.2.12"
+    puppeteer-extra-plugin "^3.2.3"
+    puppeteer-extra-plugin-user-preferences "^2.4.1"
 
 puppeteer-extra-plugin-user-data-dir@^2.4.1:
   version "2.4.1"
@@ -2648,7 +2648,7 @@ puppeteer-extra-plugin-user-data-dir@^2.4.1:
     puppeteer-extra-plugin "^3.2.3"
     rimraf "^3.0.2"
 
-puppeteer-extra-plugin-user-preferences@^2.2.12:
+puppeteer-extra-plugin-user-preferences@^2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/puppeteer-extra-plugin-user-preferences/-/puppeteer-extra-plugin-user-preferences-2.4.1.tgz#db8ec63c04a6a10a8f8997e15fdffdf13272161d"
   integrity sha512-i1oAZxRbc1bk8MZufKCruCEC3CCafO9RKMkkodZltI4OqibLFXF3tj6HZ4LZ9C5vCXZjYcDWazgtY69mnmrQ9A==
@@ -2658,7 +2658,7 @@ puppeteer-extra-plugin-user-preferences@^2.2.12:
     puppeteer-extra-plugin "^3.2.3"
     puppeteer-extra-plugin-user-data-dir "^2.4.1"
 
-puppeteer-extra-plugin@^3.1.9, puppeteer-extra-plugin@^3.2.3:
+puppeteer-extra-plugin@^3.2.3:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/puppeteer-extra-plugin/-/puppeteer-extra-plugin-3.2.3.tgz#50c9f0749c005bbc7b8b208bcd00a9d46a15b585"
   integrity sha512-6RNy0e6pH8vaS3akPIKGg28xcryKscczt4wIl0ePciZENGE2yoaQJNd17UiEbdmh5/6WW6dPcfRWT9lxBwCi2Q==
