@@ -7,7 +7,7 @@
 [build]
   command = "yarn build"
   functions = "functions"
-  publish = "out"
+  publish = ".next"
 
 [[redirects]]
   from = "/api/*"
