@@ -3,7 +3,6 @@
 
 [build.environment]
   NEXT_DISABLE_EDGE_IMAGES = "true"
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
 [build]
   command = "yarn build"
@@ -11,13 +10,7 @@
   publish = "out"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
   force = true
-
