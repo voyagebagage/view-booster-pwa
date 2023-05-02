@@ -1,6 +1,6 @@
 // const { puppeteer } = require("puppeteer-extra");
 // const chromium = require("chrome-aws-lambda");fdsf
-const puppeteer = require("puppeteer-extra");
+import puppeteer from "puppeteer-extra";
 
 // // add stealth plugin and use defaults (all evasion techniques)
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
