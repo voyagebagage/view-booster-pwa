@@ -1,13 +1,14 @@
 // const { puppeteer } = require("puppeteer-extra");
 // const chromium = require("chrome-aws-lambda");fdsf
 import puppeteer from "puppeteer-extra";
+const puppeteer = require("puppeteer-extra/dist/index.cjs.js");
+// puppeteer-extra/dist/index.cjs.js
 import StealthPlugin from "puppeteer-extra-plugin-stealth";
 // // add stealth plugin and use defaults (all evasion techniques)
 // const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 puppeteer.use(StealthPlugin());
 
 // Add the Imports before StealthPlugin
-// puppeteer-extra/dist/index.cjs.js
 // require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/chrome.app");
 // require("puppeteer-extra-plugin-stealth/evasions/chrome.app");
 // require("../../../node_modules/puppeteer-extra-plugin-stealth/evasions/chrome.app");
