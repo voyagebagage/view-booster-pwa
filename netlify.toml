@@ -3,7 +3,7 @@
 
 [build]
   command = "yarn install && yarn build"
-  publish = "out"
+  publish = ".next"
   [build.environment]
     NEXT_DISABLE_EDGE_IMAGES = "true"
     YARN_VERSION = "1.22.19"
