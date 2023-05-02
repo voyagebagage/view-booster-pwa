@@ -15,7 +15,8 @@ const handler = nc({
   try {
     const queries = req.body;
     const { automationYoutubeUrl, mute, chromePath } = queries;
-    res.send(await youtube(automationYoutubeUrl, Boolean(mute), chromePath));
+    await youtube(automationYoutubeUrl, Boolean(mute), chromePath);
+    res.status(200).send({ success: true, message: "Operation successful" });
   } catch (error) {
     res.send({ success: false, error: error.message });
   }
