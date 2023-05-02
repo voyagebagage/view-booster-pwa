@@ -12,6 +12,7 @@ import {
 } from "react-bootstrap";
 import Link from "next/link";
 import axios from "axios";
+
 export default function Home() {
   // const notFindChrome = "Failed to launch the browser process!";
 
@@ -29,6 +30,8 @@ export default function Home() {
   const [formState, updateFormState] = useState(initialFormState);
 
   // const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const API_BASE_URL =
+    process.env.NODE_ENV === "production" ? "/.netlify/functions" : "/api";
 
   const {
     mute,
@@ -74,10 +77,13 @@ export default function Home() {
       //   }
       // );
       const response = await axios.post(
-        "/.netlify/functions/next-video",
+        // "/.netlify/functions/next-video",
+        `${API_BASE_URL}/next-video`,
         queries
       );
-      const data = await response.json();
+      console.log("response:", response.status, response.data);
+      // const data = await response.json();
+      const data = await response.data;
       console.log(data, data.error);
       if (data.success === false) {
         if (
