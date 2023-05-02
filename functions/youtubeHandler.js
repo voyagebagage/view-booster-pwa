@@ -1,5 +1,5 @@
 // const { puppeteer } = require("puppeteer-extra");
-const chromium = require("chrome-aws-lambda");
+// const chromium = require("chrome-aws-lambda");
 const puppeteer = require("puppeteer-extra");
 
 // // add stealth plugin and use defaults (all evasion techniques)
@@ -22,7 +22,7 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
 
     defaultViewport: null,
 
-    executablePath: chromePath || (await chromium.executablePath),
+    executablePath: chromePath,
   });
   const page = await browser.newPage();
   await page.goto(automationYoutubeUrl, {});
