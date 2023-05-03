@@ -1,6 +1,5 @@
-// const { puppeteer } = require("puppeteer-extra");
-// const chromium = require("chrome-aws-lambda");fdsf
-import puppeteer from "puppeteer-extra";
+const puppeteer = require("puppeteer-extra");
+// import puppeteer from "puppeteer-extra";
 
 // import StealthPlugin from "puppeteer-extra-plugin-stealth";
 // // add stealth plugin and use defaults (all evasion techniques)
@@ -25,8 +24,8 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
 
     // executablePath: chromePath || (await chromium.executablePath),
     executablePath: chromePath,
-    userDataDir:
-      "/Users/sedatif2/Library/Application Support/Google/Chrome/Default",
+    // userDataDir:
+    //   "/Users/sedatif2/Library/Application Support/Google/Chrome/Default",
   });
   const page = await browser.newPage();
   await page.goto(automationYoutubeUrl, { timeout: 60000 });
