@@ -76,7 +76,7 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
     "span.style-scope.yt-formatted-string",
     (spans) => Number(spans.at(-1).textContent)
   );
-
+  console.log("The playlist has", totalPlaylistVideoNumber, "videos");
   const nextButton = await page.$$("a.ytp-next-button.ytp-button");
 
   let howManyTimesPlaylistPlayed = 0;
