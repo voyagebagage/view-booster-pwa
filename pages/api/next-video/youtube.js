@@ -5,18 +5,7 @@ const puppeteer = require("puppeteer-extra");
 // // add stealth plugin and use defaults (all evasion techniques)
 const StealthPlugin = require("puppeteer-extra-plugin-stealth")();
 
-// console.log(
-//   StealthPlugin.availableEvasions,
-//   StealthPlugin,
-//   StealthPlugin.extend
-// );
-
-// StealthPlugin.enabledEvasions.delete("console.debug");
-
-// console.log(StealthPlugin.availableEvasions);
 puppeteer.use(StealthPlugin);
-
-// StealthPlugin.enabledEvasions.add(ChromeApp.name);
 
 const random = () => {
   return Math.ceil(Math.random() * 10000);
@@ -45,7 +34,7 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
     //   "/Users/sedatif2/Library/Application Support/Google/Chrome/Default",
   });
   const page = await browser.newPage();
-  await page.goto(automationYoutubeUrl, {});
+  await page.goto(automationYoutubeUrl, { timeout: 0 });
   // //----------------------------------------------------------------------------------------------------
   // //                                            XXX-SET-UP-XXX
   // //-----------------------------------------------------------------------------------------------------
