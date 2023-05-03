@@ -7,4 +7,4 @@
 
 [build]
   command = "yarn install && yarn build"
-  publish = "out"
+  publish = ".next"
