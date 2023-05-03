@@ -23,7 +23,11 @@
     "react-dom": "18.2.0"
   },
   "pkg": {
-    "assets": "node_modules/puppeteer-extra-plugin-stealth/**/*.*"
+    "assets": [
+      "node_modules/puppeteer/lib/*.*",
+      "node_modules/puppeteer-extra-plugin-stealth/**/*.*",
+      "node_modules/puppeteer-extra/**/*.*"
+    ]
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^4.36.0"
