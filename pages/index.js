@@ -76,10 +76,13 @@ export default function Home() {
       //     // password: password,
       //   }
       // );
+      console.log(
+        `api/next-video?automationYoutubeUrl=${await automationUrl}&mute=${await mute}&chromePath=${await chromePath}`
+      );
       const response = await axios.post(`api/next-video`, queries, {
         timeout: 0,
       });
-      console.log("response:", response.status, response.data);
+      console.log("response:", response.status, response, response.data);
       // const data = await response.json();
       const data = await response.data;
       console.log("data", data, "dataLog", data.log, "dataErr", data.error);

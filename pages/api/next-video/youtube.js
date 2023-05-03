@@ -27,7 +27,7 @@ console.log(
   // puppeteer.executablePath
 );
 
-const youtube = async (automationYoutubeUrl, mute, chromePath, log) => {
+const youtube = async (automationYoutubeUrl, mute, chromePath) => {
   const browser = await puppeteer.launch({
     headless: false,
     ignoreDefaultArgs: ["--enable-automation", "--disable-infobars"],
@@ -45,7 +45,7 @@ const youtube = async (automationYoutubeUrl, mute, chromePath, log) => {
     //   "/Users/sedatif2/Library/Application Support/Google/Chrome/Default",
   });
   const page = await browser.newPage();
-  await page.goto(automationYoutubeUrl, { timeout: 60000 });
+  await page.goto(automationYoutubeUrl, {});
   // //----------------------------------------------------------------------------------------------------
   // //                                            XXX-SET-UP-XXX
   // //-----------------------------------------------------------------------------------------------------
@@ -77,8 +77,9 @@ const youtube = async (automationYoutubeUrl, mute, chromePath, log) => {
     (spans) => Number(spans.at(-1).textContent)
   );
   console.log("The playlist has", totalPlaylistVideoNumber, "videos");
-  // log("The playlist has", totalPlaylistVideoNumber, "videos");
   const nextButton = await page.$$("a.ytp-next-button.ytp-button");
+  // const confirmButton = await page.$$("div.yt-spec-touch-feedback-shape__fill");
+  // const confirmButton2 = await page.$x('//button[@id="confirm-button"]');
 
   let howManyTimesPlaylistPlayed = 0;
   let i;
@@ -87,20 +88,65 @@ const youtube = async (automationYoutubeUrl, mute, chromePath, log) => {
   // //-----------------------------------------------------------------------------------------------------
   while (true) {
     howManyTimesPlaylistPlayed += 1;
-    console.log("BEGINNING ...");
+    if (howManyTimesPlaylistPlayed > 1) {
+      console.log("START PLAYLIST ...", howManyTimesPlaylistPlayed, "time");
+    } else {
+      console.log("BEGINNING ...");
+    }
     // log("BEGINNING ...");
     //--
-    for (i = 0; i <= totalPlaylistVideoNumber; i++) {
+    for (i = 0; i < totalPlaylistVideoNumber; i++) {
       console.log("Play ... video #", i);
-      // log("Play ... video #", i);
+      if (
+        await page.$("#confirm-button div.yt-spec-touch-feedback-shape__fill")
+      ) {
+        console.log("IF YES");
+        try {
+          let confirmButton = await page.$(
+            "#confirm-button div.yt-spec-touch-feedback-shape__fill"
+          );
+          await confirmButton.click();
+          console.log("confirm button clicked");
+        } catch (error) {
+          console.log(error);
+        }
+      }
       await new Promise(function (resolve) {
         setTimeout(resolve, 30000);
       });
+      if (
+        await page.$("#confirm-button div.yt-spec-touch-feedback-shape__fill")
+      ) {
+        console.log("IF YES");
+        try {
+          let confirmButton = await page.$(
+            "#confirm-button div.yt-spec-touch-feedback-shape__fill"
+          );
+          await confirmButton.click();
+          console.log("confirm button clicked");
+        } catch (error) {
+          console.log(error);
+        }
+      }
       // console.log(random(), typeof randomVideoTime, i);
       await new Promise(function (resolve) {
         setTimeout(resolve, random());
       });
-
+      // console.log("After second timeout");
+      if (
+        await page.$("#confirm-button div.yt-spec-touch-feedback-shape__fill")
+      ) {
+        console.log("IF YES");
+        try {
+          let confirmButton = await page.$(
+            "#confirm-button div.yt-spec-touch-feedback-shape__fill"
+          );
+          await confirmButton.click();
+          console.log("confirm button clicked");
+        } catch (error) {
+          console.log(error);
+        }
+      }
       await nextButton[0].click();
     }
     console.log("END OF THE PLAYLIST #", i + 1);

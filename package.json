@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "bundle": "ncc build pages/api/next-video.js -o pages/api/bundled"
   },
   "dependencies": {
     "axios": "^1.4.0",
@@ -22,15 +22,8 @@
     "react-bootstrap": "^2.6.0",
     "react-dom": "18.2.0"
   },
-  "pkg": {
-    "assets": [
-      "node_modules/puppeteer/lib/*.*",
-      "node_modules/puppeteer-extra-plugin-stealth/**/*.*",
-      "node_modules/puppeteer-extra/**/*.*",
-      "node_modules/puppeteer-extra-plugin-stealth/evasions/chrome.app"
-    ]
-  },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.36.0"
+    "@netlify/plugin-nextjs": "^4.36.0",
+    "@vercel/ncc": "^0.36.1"
   }
 }
