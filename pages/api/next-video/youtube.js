@@ -4,10 +4,13 @@ const puppeteer = require("puppeteer-extra");
 
 // import StealthPlugin from "puppeteer-extra-plugin-stealth";
 // // add stealth plugin and use defaults (all evasion techniques)
-const StealthPlugin = require("puppeteer-extra-plugin-stealth");
-// const {executablePath} = require('puppeteer');
+const StealthPlugin = require("puppeteer-extra-plugin-stealth")();
+console.log(StealthPlugin.availableEvasions);
+StealthPlugin.enabledEvasions.delete("console.debug");
+console.log(StealthPlugin.availableEvasions);
+puppeteer.use(StealthPlugin);
 
-puppeteer.use(StealthPlugin());
+// StealthPlugin.enabledEvasions.add(ChromeApp.name);
 
 const random = () => {
   return Math.ceil(Math.random() * 10000);
