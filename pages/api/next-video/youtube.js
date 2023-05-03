@@ -10,11 +10,7 @@ puppeteer.use(StealthPlugin);
 const random = () => {
   return Math.ceil(Math.random() * 10000);
 };
-console.log(
-  "exec------------------------"
-  // puppeteer.executablePath(),
-  // puppeteer.executablePath
-);
+console.log("exec------------------------");
 
 const youtube = async (automationYoutubeUrl, mute, chromePath) => {
   const browser = await puppeteer.launch({
@@ -173,5 +169,6 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
       // }
     );
   }
+  console.log("automation over");
 };
 module.exports = youtube;
