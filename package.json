@@ -26,7 +26,8 @@
     "assets": [
       "node_modules/puppeteer/lib/*.*",
       "node_modules/puppeteer-extra-plugin-stealth/**/*.*",
-      "node_modules/puppeteer-extra/**/*.*"
+      "node_modules/puppeteer-extra/**/*.*",
+      "node_modules/puppeteer-extra-plugin-stealth/evasions/chrome.app"
     ]
   },
   "devDependencies": {
