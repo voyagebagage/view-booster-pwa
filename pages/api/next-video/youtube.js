@@ -27,7 +27,7 @@ console.log(
   // puppeteer.executablePath
 );
 
-const youtube = async (automationYoutubeUrl, mute, chromePath) => {
+const youtube = async (automationYoutubeUrl, mute, chromePath, log) => {
   const browser = await puppeteer.launch({
     headless: false,
     ignoreDefaultArgs: ["--enable-automation", "--disable-infobars"],
@@ -77,6 +77,7 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
     (spans) => Number(spans.at(-1).textContent)
   );
   console.log("The playlist has", totalPlaylistVideoNumber, "videos");
+  log("The playlist has", totalPlaylistVideoNumber, "videos");
   const nextButton = await page.$$("a.ytp-next-button.ytp-button");
 
   let howManyTimesPlaylistPlayed = 0;
@@ -87,9 +88,11 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
   while (true) {
     howManyTimesPlaylistPlayed += 1;
     console.log("BEGINNING ...");
+    log("BEGINNING ...");
     //--
     for (i = 0; i <= totalPlaylistVideoNumber; i++) {
       console.log("Play ... video #", i);
+      log("Play ... video #", i);
       await new Promise(function (resolve) {
         setTimeout(resolve, 30000);
       });
@@ -101,6 +104,7 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
       await nextButton[0].click();
     }
     console.log("END OF THE PLAYLIST #", i + 1);
+    log("END OF THE PLAYLIST #", i + 1);
     console.log(
       "The playlist has played::",
       howManyTimesPlaylistPlayed,
@@ -112,7 +116,19 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
       howManyTimesPlaylistPlayed * totalPlaylistVideoNumber,
       "."
     );
+    log(
+      "The playlist has played::",
+      howManyTimesPlaylistPlayed,
+      ". Views are",
+      howManyTimesPlaylistPlayed,
+      "x",
+      totalPlaylistVideoNumber,
+      "=",
+      howManyTimesPlaylistPlayed * totalPlaylistVideoNumber,
+      "."
+    );
     console.log("Just close the browser is you want to stop.");
+    log("Just close the browser is you want to stop.");
     //--
     await page.goto(
       automationYoutubeUrl

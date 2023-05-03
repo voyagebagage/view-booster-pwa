@@ -82,7 +82,8 @@ export default function Home() {
       console.log("response:", response.status, response.data);
       // const data = await response.json();
       const data = await response.data;
-      console.log(data, data.error);
+      console.log("data", data, "dataLog", data.log, "dataErr", data.error);
+      data.logs.forEach((log) => console.log(log));
       if (data.success === false) {
         if (
           data.error.includes("spawn") ||
