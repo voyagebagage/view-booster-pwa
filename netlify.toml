@@ -1,9 +1,10 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+[build.environment]
+  NEXT_DISABLE_EDGE_IMAGES = "true"
+  YARN_VERSION = "1.22.19"
+
 [build]
   command = "yarn install && yarn build"
-  publish = ".next"
-  [build.environment]
-    NEXT_DISABLE_EDGE_IMAGES = "true"
-
+  publish = "out"

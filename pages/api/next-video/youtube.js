@@ -1,13 +1,19 @@
 const puppeteer = require("puppeteer-extra");
 // import puppeteer from "puppeteer-extra";
-// const isPkg = typeof process.pkg !== "undefined";
 
 // import StealthPlugin from "puppeteer-extra-plugin-stealth";
 // // add stealth plugin and use defaults (all evasion techniques)
 const StealthPlugin = require("puppeteer-extra-plugin-stealth")();
-console.log(StealthPlugin.availableEvasions);
-StealthPlugin.enabledEvasions.delete("console.debug");
-console.log(StealthPlugin.availableEvasions);
+
+// console.log(
+//   StealthPlugin.availableEvasions,
+//   StealthPlugin,
+//   StealthPlugin.extend
+// );
+
+// StealthPlugin.enabledEvasions.delete("console.debug");
+
+// console.log(StealthPlugin.availableEvasions);
 puppeteer.use(StealthPlugin);
 
 // StealthPlugin.enabledEvasions.add(ChromeApp.name);
