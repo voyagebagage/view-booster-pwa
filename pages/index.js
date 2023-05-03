@@ -77,7 +77,7 @@ export default function Home() {
       //   }
       // );
       const response = await axios.post(`api/next-video`, queries, {
-        timeout: 60000,
+        timeout: 0,
       });
       console.log("response:", response.status, response.data);
       // const data = await response.json();

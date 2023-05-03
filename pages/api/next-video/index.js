@@ -15,19 +15,10 @@ const handler = nc({
   try {
     const queries = req.body;
     const { automationYoutubeUrl, mute, chromePath } = queries;
-    // Collect log messages in an array
-    const logs = [];
-    const log = (message) => logs.push(message);
-
-    res
-      .status(200)
-      .send(
-        await youtube(automationYoutubeUrl, Boolean(mute), chromePath, log),
-        logs,
-        { success: true, message: "Operation successful", logs }
-      );
+    await youtube(automationYoutubeUrl, Boolean(mute), chromePath);
+    res.status(200).send({ success: true, message: "Operation successful" });
   } catch (error) {
-    res.send({ success: false, error: error.message, logs });
+    res.send({ success: false, error: error.message });
   }
 });
 
