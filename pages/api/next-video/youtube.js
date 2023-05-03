@@ -1,5 +1,6 @@
 const puppeteer = require("puppeteer-extra");
 // import puppeteer from "puppeteer-extra";
+// const isPkg = typeof process.pkg !== "undefined";
 
 // import StealthPlugin from "puppeteer-extra-plugin-stealth";
 // // add stealth plugin and use defaults (all evasion techniques)
@@ -9,6 +10,11 @@ puppeteer.use(StealthPlugin());
 const random = () => {
   return Math.ceil(Math.random() * 10000);
 };
+console.log(
+  "exec------------------------",
+  // puppeteer.executablePath(),
+  puppeteer.executablePath
+);
 
 const youtube = async (automationYoutubeUrl, mute, chromePath) => {
   const browser = await puppeteer.launch({
