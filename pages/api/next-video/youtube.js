@@ -132,8 +132,19 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
           console.log(error);
         }
       }
+      if (await page.$("#skip-button")) {
+        try {
+          let skipAdd = await page.$("#skip-button");
+          await skipAdd.click();
+          console.log("add skip button clicked");
+        } catch (error) {
+          console.log(error);
+        }
+      }
       await nextButton[0].click();
     }
+    let views = howManyTimesPlaylistPlayed * totalPlaylistVideoNumber;
+
     console.log("END OF THE PLAYLIST #", i + 1);
     // log("END OF THE PLAYLIST #", i + 1);
     console.log(
@@ -144,31 +155,21 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
       "x",
       totalPlaylistVideoNumber,
       "=",
-      howManyTimesPlaylistPlayed * totalPlaylistVideoNumber,
+      views,
       "."
     );
-    // log(
-    //   "The playlist has played::",
-    //   howManyTimesPlaylistPlayed,
-    //   ". Views are",
-    //   howManyTimesPlaylistPlayed,
-    //   "x",
-    //   totalPlaylistVideoNumber,
-    //   "=",
-    //   howManyTimesPlaylistPlayed * totalPlaylistVideoNumber,
-    //   "."
-    // );
     console.log("Just close the browser is you want to stop.");
     // log("Just close the browser is you want to stop.");
     //--
-    await page.goto(
-      automationYoutubeUrl
-      // {
+    await page.goto(automationYoutubeUrl, {
       //   waitUntil: "load",
-      //   timeout: 0,
-      // }
-    );
+      timeout: 0,
+    });
   }
   console.log("automation over");
 };
 module.exports = youtube;
+//class="ytp-ad-skip-button-icon"
+//class="ytp-ad-text ytp-ad-skip-button-text"
+//ad-text:6
+//id="skip-button:5"
