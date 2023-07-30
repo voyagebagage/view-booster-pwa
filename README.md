@@ -3,11 +3,12 @@ This is a view booster for youtube, every 30 to 60 it will change video for the 
 [![Video](https://img.youtube.com/vi/X3KysZOTP30/0.jpg)](https://www.youtube.com/watch?v=X3KysZOTP30) 
 
 It will take you 2 minutes to get started
----
+--
 1. Make/Choose a YT playlist 
-2. Clone/Copy the repository on your computer ([how to clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository))
+2. Clone/Copy the repository on your computer ([how to clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)) <br/>
  2.1 Dev ref queries 
-3. Start the server on your laptop EASY, only works locally
+3. Start the server on your laptop EASY, only works locally <br/>
+ 3.1 __Start the App__
 4. Install it or use it in the browser
 5. Find your Chrome path on your computer
 
@@ -16,9 +17,29 @@ It will take you 2 minutes to get started
 ```jsx
 const {automationYoutubeUrl , mute, chromePath} = req.query
 ```
-3 Install the app... 
+2 Clone/Copy the app on your machine 
 ---
-simply click on the first download button on the right hand side
+- ([how to clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository))
+choose a place to copy it
+- Go to the parent folder and select it, if I cloned it on the desktop open the folder desktop and copy the path name
+![Capture d’écran 2023-07-30 à 14 39 32](https://github.com/voyagebagage/view-booster-pwa/assets/81431557/2c41d796-05e7-489d-8d9f-70fd1d94a609)
+- Open your terminal cmd + space then write terminal
+- ### write ```cd 'paste-the-path-you-just-copied'``` and ___DO NOT FORGET THE QUOTES ' '___    then press enter
+- ### write and press enter
+      yarn yarn dev
+
+3.1 Start the App
+--
+copy in your browser
+```
+http://localhost:3000
+```
+
+
+
+3 Install the app... or use it the browser it works too
+---
+simply click on the first download button on the right hand side __don't pay attention to that url on the pic__
 
 <img width="828" alt="Capture d’écran 2022-12-03 à 09 22 31" src="https://user-images.githubusercontent.com/81431557/205454861-96ffef6e-9f62-43c4-8587-43a4494bd84d.png">
 
@@ -26,7 +47,7 @@ simply click on the first download button on the right hand side
 ---
 Simply, copy
 
-                chrome://version
+            chrome://version
 in a new chrome tab.
 
 => Then copy the path and insert it the last input dedicaded
