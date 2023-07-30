@@ -1,14 +1,9 @@
-This is a view booster for youtube, every 30 to 60 it will change video for the next one.
-Youtube it's changing from time to time, 
-and they might stop counting as a view after 4-5 times within 24 hours.
-But let's find out !
+This is a view booster for youtube, every 30 to 60 it will change video for the next one. Youtube it's changing from time to time, this boost will run forever(as long as you wish)
+[Click to watch the demo video](https://www.youtube.com/watch?v=X3KysZOTP30)  <br/>
+[![Video](https://img.youtube.com/vi/X3KysZOTP30/0.jpg)](https://www.youtube.com/watch?v=X3KysZOTP30) 
 
-As this boost will run forever(as long as you wish), you will need a server running on your computer 
-and the app/browser app or postman for the developpers 
-
-This is the web app README :  [Server README](https://github.com/voyagebagage/view-booster-server)
+It will take you 2 minutes to get started
 ---
-
 1. Make/Choose a YT playlist 
 2. Clone the repository and install the web app or go directly to the [website/deploy](https://this-is-view-booster-yt.netlify.app/)<br/>
  2.1 Dev ref queries 
