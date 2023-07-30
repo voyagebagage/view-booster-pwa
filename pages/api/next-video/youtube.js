@@ -59,7 +59,7 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
       console.log("Play ... video #", i + 1);
 
       await new Promise(function (resolve) {
-        setTimeout(resolve, 3000);
+        setTimeout(resolve, 30000);
       });
       await new Promise(function (resolve) {
         setTimeout(resolve, random());
