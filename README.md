@@ -21,12 +21,12 @@ const {automationYoutubeUrl , mute, chromePath} = req.query
 ---
 - ([how to clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository))
 choose a place to copy it
-- Go to the parent folder and select it, if I cloned it on the desktop open the folder desktop and copy the path name
+- Go to the parent folder and select it, if I cloned it on the desktop open the folder desktop and copy(right click) the path name, _not on the selected file but under in the path display_
 ![Capture d’écran 2023-07-30 à 14 39 32](https://github.com/voyagebagage/view-booster-pwa/assets/81431557/2c41d796-05e7-489d-8d9f-70fd1d94a609)
 - Open your terminal cmd + space then write terminal
 - ### write ```cd 'paste-the-path-you-just-copied'``` and ___DO NOT FORGET THE QUOTES ' '___    then press enter
 - ### write and press enter
-      yarn yarn dev
+      yarn && yarn dev
 
 3.1 Start the App
 --
