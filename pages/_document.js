@@ -5,7 +5,7 @@ export default function Document() {
     <Html>
       <Head>
         <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/icon.png"></link>
+        <link rel="apple-touch-icon" href="/icon-512x512.png"></link>
         <meta name="theme-color" content="#282c34" />
       </Head>
       {/* <title>View Booster PWA</title> */}
