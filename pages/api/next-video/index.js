@@ -1,5 +1,4 @@
 import youtube from "./youtube.js";
-// const nc = require("next-connect");
 import nc from "next-connect";
 
 const handler = nc({

@@ -14,8 +14,6 @@ import Link from "next/link";
 import axios from "axios";
 
 export default function Home() {
-  // const notFindChrome = "Failed to launch the browser process!";
-
   const initialFormState = {
     automationUrl: "",
     mute: false,
@@ -30,8 +28,8 @@ export default function Home() {
   const [formState, updateFormState] = useState(initialFormState);
 
   // const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  const API_BASE_URL =
-    process.env.NODE_ENV === "production" ? "/.netlify/functions" : "/api";
+  // const API_BASE_URL =
+  //   process.env.NODE_ENV === "production" ? "/.netlify/functions" : "/api";
 
   const {
     mute,
@@ -69,11 +67,7 @@ export default function Home() {
       const response = await axios.post(`api/next-video`, queries, {
         timeout: 0,
       });
-      console.log("response:", response.status, response, response.data);
-      // const data = await response.json();
       const data = await response.data;
-      console.log("data", data, "dataErr", data.error);
-
       if (data.success === false) {
         if (
           data.error.includes("spawn") ||

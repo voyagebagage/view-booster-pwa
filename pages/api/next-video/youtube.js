@@ -1,14 +1,11 @@
 import puppeteer from "puppeteer-extra";
-
-// // add stealth plugin and use defaults (all evasion techniques)
 import StealthPlugin from "puppeteer-extra-plugin-stealth";
+
 puppeteer.use(StealthPlugin());
 
 const random = () => {
   return Math.ceil(Math.random() * 10000);
 };
-console.log("exec------------------------");
-
 const youtube = async (automationYoutubeUrl, mute, chromePath) => {
   const browser = await puppeteer.launch({
     headless: false,
@@ -29,21 +26,6 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
 
   await page.waitForXPath('//button[@aria-label="Loop playlist"]');
 
-  // Find the button element
-  // const [loopButton] = await page.$x('//button[@aria-label="Loop playlist"]');
-
-  // // Click on the button if it exists
-  // if (loopButton) {
-  //   await loopButton.click();
-  //   console.log("Loop playlist button clicked.");
-  // } else {
-  //   console.log("Loop playlist button not found.");
-  // }
-
-  //click loop, mute and play
-  // await loopPlaylistEnable[0].click();
-  console.log("3");
-
   await new Promise(function (resolve) {
     setTimeout(resolve, 200 + random(0.5));
   });
@@ -51,8 +33,6 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
   await new Promise(function (resolve) {
     setTimeout(resolve, 100 + random(0.5));
   });
-
-  // await page.waitFor(100 + random(0.5));
 
   const totalPlaylistVideoNumber = await page.$$eval(
     "yt-formatted-string.index-message.style-scope.ytd-playlist-panel-renderer span",
@@ -118,6 +98,5 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
       timeout: 0,
     });
   }
-  console.log("automation over");
 };
 export default youtube;
