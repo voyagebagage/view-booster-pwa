@@ -11,6 +11,7 @@ It will take you 2 minutes to get started
  3.1 __Start the App__
 4. Install it or use it in the browser
 5. Find your Chrome path on your computer
+6. what I use for making this app
 
 2.1 req.query , only for devs
 ---
@@ -58,3 +59,10 @@ in a new chrome tab.
 #### input
 <img width="1129" alt="Capture d’écran 2022-12-04 à 01 14 35" src="https://user-images.githubusercontent.com/81431557/205455741-faa21bc9-711f-42c8-90a2-bb4ad3b9d736.png">
 
+6 what I used
+---
+- Next.js
+- Bootstrap  
+- Puppeteer 
+- Next-pwa
+- Next-connect, allow me to only have the front end server on 
