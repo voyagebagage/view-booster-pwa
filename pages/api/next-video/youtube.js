@@ -26,12 +26,7 @@ const youtube = async (automationYoutubeUrl, mute, chromePath) => {
   //---------------------------------------------------
   //              XXX-SET-UP-XXX
   // --------------------------------------------------
-  //await for the play button to appear to continue
-  //   await page.waitForSelector(
-  //     "button.yt-spec-touch-feedback-shape--touch-response.yt-spec-touch-feedback-shape__fill"
-  //   );
-  // console.log("1");
-  // Wait for the "Loop playlist" button to appear
+
   await page.waitForXPath('//button[@aria-label="Loop playlist"]');
 
   // Find the button element
