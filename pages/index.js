@@ -66,19 +66,6 @@ export default function Home() {
         chromePath: chromePath,
       };
 
-      // const response = await fetch(
-      //   `api/next-video?automationYoutubeUrl=${automationUrl}&mute=${mute}&chromePath=${chromePath}`,
-      //   {
-      //     method: "POST",
-      //     body: JSON.stringify(queries),
-      //     // tryLoggedIn: tryLoggedIn,
-      //     // username: username,
-      //     // password: password,
-      //   }
-      // );
-      console.log(
-        `api/next-video?automationYoutubeUrl=${await automationUrl}&mute=${await mute}&chromePath=${await chromePath}`
-      );
       const response = await axios.post(`api/next-video`, queries, {
         timeout: 0,
       });

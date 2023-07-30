@@ -1,7 +1,6 @@
-const youtube = require("./youtube.js");
+import youtube from "./youtube.js";
+// const nc = require("next-connect");
 import nc from "next-connect";
-
-// pages/api/hello.js
 
 const handler = nc({
   onError: (err, req, res, next) => {
